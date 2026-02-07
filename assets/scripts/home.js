@@ -1,58 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
-  function animateCounter(counter) {
-    console.log("called")
-    if (counter.dataset.animated === "true") return;
-    counter.dataset.animated = "true";
+function animateCounter(counter) {
+  if (counter.dataset.animated === "true") return;
+  counter.dataset.animated = "true";
 
-    let target = parseInt(counter.innerText.trim());
-    if (isNaN(target)) return;
+  // pega sempre do atributo
+  let target = parseInt(counter.dataset.target);
 
-    let duration = 2000; // ⏱ tempo total da animação (2s)
-    let interval = 30; // velocidade do frame
-    let steps = duration / interval;
+  if (isNaN(target)) return;
 
-    let current = 0;
+  let duration = 2000;
+  let interval = 30;
+  let steps = duration / interval;
 
-    // 🔥 step calculado automaticamente pra terminar junto
-    let step = Math.ceil(target / steps);
+  let current = 0;
+  let step = Math.ceil(target / steps);
 
-    function updateCounter() {
-      current += step;
+  function updateCounter() {
+    current += step;
 
-      if (current >= target) {
-        current = target;
+    if (current >= target) {
+      current = target;
 
-        // caso especial 1 milhão
-        if (target === 1000000) {
-          counter.innerText = "1 milhão";
-        } else {
-          counter.innerText = target.toLocaleString("pt-BR");
-        }
-        return;
+      if (target === 1000000) {
+        counter.innerText = "1 milhão";
+      } else {
+        counter.innerText = target.toLocaleString("pt-BR");
       }
-
-      counter.innerText = current.toLocaleString("pt-BR");
-      setTimeout(updateCounter, interval);
+      return;
     }
 
-    updateCounter();
+    counter.innerText = current.toLocaleString("pt-BR");
+    setTimeout(updateCounter, interval);
   }
 
-  // Observer pra rodar só quando aparecer
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
+  updateCounter();
+}
 
-  document.querySelectorAll(".number-rotative").forEach((counter) => {
-    observer.observe(counter);
-  });
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+document.querySelectorAll(".number-rotative").forEach((counter) => {
+  observer.observe(counter);
+});
+
 
   new Swiper(".swiper", {
     slidesPerView: 1,

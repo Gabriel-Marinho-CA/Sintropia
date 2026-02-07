@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   function animateCounter(counter) {
+    console.log("called")
     if (counter.dataset.animated === "true") return;
     counter.dataset.animated = "true";
 

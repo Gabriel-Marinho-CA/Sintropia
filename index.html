@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sintropia.</title>
+    <meta name="description" content="Sintropia. Descubra como ganhar mais tempo para você e seus pacientes">
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+
+    <!-- CSS principal -->
+    <link rel="preload" href="./assets/style/main.css" as="style" />
+
+    <!-- Immagem principal -->
+    <link rel="preload" href="assets/imgs/img1.png" as="image" />
+
+    <link rel="stylesheet" href="./assets/style/main.css" />
+
+    <!-- CSS secundários async -->
+    <link
+      rel="stylesheet"
+      href="./assets/style/header.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/style/sections.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/style/footer.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- Google Fonts em 1 request -->
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- Preload fonte local -->
+    <link
+      rel="preload"
+      href="/assets/fonts/roca-one-bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Swiper CSS async -->
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+      />
+    </noscript>
+
+    <!-- Swiper JS defer -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <sticky-header>
+      <header class="header page-width">
+        <h1 class="header__heading">
+          <a href="/" title="Home">
+            <div class="wrapper-logo">
+              <img
+                src="./assets/icons/logo.svg"
+                alt="Logo"
+                width="217"
+                height="45"
+              />
+            </div>
+          </a>
+        </h1>
+        <nav class="header__inline-menu">
+          <ul class="list-menu list-menu--inline" role="list">
+            <li>
+              <a
+                id="HeaderMenu-inicio"
+                href="#"
+                class="header__menu-item"
+                title="Inicio"
+              >
+                <span class="header__active-menu-item">Inicio</span>
+              </a>
+            </li>
+            <li>
+              <a
+                id="HeaderMenu-sobre"
+                href="#Sobre"
+                class="header__menu-item"
+                title="Sobre"
+              >
+                <span>Sobre</span>
+              </a>
+            </li>
+            <li>
+              <a
+                id="HeaderMenu-funcionalidades"
+                href="#Funcionalidades"
+                class="header__menu-item"
+                title="Funcionalidades"
+              >
+                <span>Funcionalidades</span>
+              </a>
+            </li>
+            <li>
+              <a
+                id="HeaderMenu-planos"
+                href="#Planos"
+                class="header__menu-item"
+                title="Planos"
+              >
+                <span>Planos</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="login-area">
+          <a href="#" class="header__icon" rel="nofollow" title="Entrar">
+            <span class="visually-hidden">Entrar</span>
+            <img
+              src="./assets/icons/icon-account.svg"
+              alt="Icone usuario"
+              width="44"
+              height="44"
+            />
+          </a>
+        </div>
+        <div class="hamburder-menu" id="menu-hamburguer">
+          <img
+            src="./assets/icons/icon-hamburguer.svg"
+            alt="Icone menu"
+            width="44"
+            height="44"
+          />
+        </div>
+      </header>
+    </sticky-header>
+    <div class="mobile-menu" id="menu-mobile">
+      <nav class="header__inline-menu">
+        <ul class="list-menu list-menu--inline" role="list">
+          <li>
+            <a
+              id="HeaderMenu-inicio"
+              href="#"
+              class="header__menu-item"
+              title="Inicio"
+            >
+              <span class="header__active-menu-item">Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a
+              id="HeaderMenu-sobre"
+              href="#Sobre"
+              class="header__menu-item"
+              title="Sobre"
+            >
+              <span>Sobre</span>
+            </a>
+          </li>
+          <li>
+            <a
+              id="HeaderMenu-funcionalidades"
+              href="#Funcionalidades"
+              class="header__menu-item"
+              title="Funcionalidades"
+            >
+              <span>Funcionalidades</span>
+            </a>
+          </li>
+          <li>
+            <a
+              id="HeaderMenu-planos"
+              href="#Planos"
+              class="header__menu-item"
+              title="Planos"
+            >
+              <span>Planos</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main>
+      <section id="inicio" class="section-wrapper hero-section">
+        <div
+          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+        >
+          <div class="custom-hero__title">
+            <p>Quando o acolhimento desenha cada detalhe da experiência.</p>
+          </div>
+          <div class="custom-hero__subtitle">
+            <p>
+              Leve ao olhar, intuitiva e fluida, a Sintropia é o sopro de
+              inspiração que encaixa na sua rotina.
+            </p>
+          </div>
+          <div class="custom-hero__buttons-wrapper">
+            <a
+              href="#"
+              class="custom-hero__button gradient-flow"
+              style="color: #ffffff"
+              ><span>Experimente agora</span> </a
+            ><a
+              href="#"
+              class="custom-hero__button"
+              style="
+                color: #443853;
+
+                background: #f5ebff;
+              "
+              ><span class="svg-wrapper">
+                <img
+                  src="assets/icons/icon-play.svg"
+                  alt="Icone play"
+                  width="20"
+                  height="20"
+                /> </span
+              ><span>Veja em ação</span>
+            </a>
+          </div>
+          <div class="wrapper-media-full-img">
+            <img
+              src="assets/imgs/img1.png"
+              alt="Imagem da seção"
+              width="1600"
+              height="474"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrapper routine-section" id="Funcionalidades">
+        <div
+          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+        >
+          <div class="custom-hero__title">
+            <p>Sua rotina no consultório está sobrecarregada?</p>
+          </div>
+          <div class="custom-hero__subtitle">
+            <p>
+              Descubra como&nbsp;ganhar mais tempo&nbsp;para seus pacientes (e
+              para você!).
+            </p>
+          </div>
+          <div class="wrapper-cards">
+            <div class="grid-cards">
+              <div class="card-routine card-rountine-1">
+                <div class="wrapper-text">
+                  <div class="title-card-routine">
+                    <p>Smart Notes</p>
+                  </div>
+
+                  <div class="subtitle-card-routine">
+                    <p>Grave, transcreva e resuma sua sessão em 3 cliques.</p>
+                  </div>
+                </div>
+
+                <div class="wrapper-media-card">
+                  <img
+                    src="./assets/imgs/img2.png"
+                    alt="Imagem do card"
+                    width="384"
+                    height="251"
+           
+                  />
+                </div>
+              </div>
+
+              <div class="card-routine card-rountine-2">
+                <div class="wrapper-text">
+                  <div class="title-card-routine">
+                    <p>Evolução de prontuário em 1 clique</p>
+                  </div>
+
+                  <div class="subtitle-card-routine">
+                    <p>
+                      Em 10 segundos, suas fichas de evolução compiladas em
+                      prontuário com a Inteligência Sintropia.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="wrapper-media-card">
+                  <img
+                    src="./assets/imgs/img2.1.png"
+                    alt="Imagem do card"
+                    width="384"
+                    height="141"
+                 
+                  />
+                </div>
+              </div>
+
+              <div class="card-routine card-rountine-3">
+                <div class="wrapper-text">
+                  <div class="title-card-routine">
+                    <p>Calendário integrado</p>
+                  </div>
+
+                  <div class="subtitle-card-routine">
+                    <p>
+                      Gerencie sua agenda de qualquer lugar, Sincronizada com o
+                      Google Calendar.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="wrapper-media-card">
+                  <img
+                    src="./assets/imgs/img2.2.png"
+                    alt="Imagem do card"
+                    width="384"
+                    height="123"
+                
+                  />
+                </div>
+              </div>
+
+              <div class="card-routine card-rountine-4">
+                <div class="wrapper-text">
+                  <div class="title-card-routine">
+                    <p>Lembretes via Whatsapp</p>
+                  </div>
+
+                  <div class="subtitle-card-routine">
+                    <p>
+                      Reduza o número de faltas na clínica com o sistema de
+                      lembretes automático para seus pacientes.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="wrapper-media-card">
+                  <img
+                    src="./assets/imgs/img2.3.png"
+                    alt="Imagem do card"
+                    width="384"
+                    height="169"
+            
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="card-routine card-routine--right">
+              <div class="wrapper-text">
+                <div class="title-card-routine">
+                  <p>Financeiro simplificado</p>
+                </div>
+
+                <div class="subtitle-card-routine">
+                  <p>
+                    Automatize e gerencie o seu financeiro direto da sua agenda.
+                  </p>
+                </div>
+              </div>
+
+              <div class="wrapper-media-card">
+                <img
+                  src="./assets/imgs/img2.4.png"
+                  alt="Imagem do card especial"
+                  width="384"
+                  height="479"
+                
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section-wrapper pensando-profissional section-template--19774271160489__tp_pensado_profissional_tnQqyj-padding"
+      >
+        <div
+          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+        >
+          <div class="custom-hero__aux">
+            <p>sistema smart notes</p>
+          </div>
+          <div class="custom-hero__title">
+            <p>Pensado para o profissional. Cuidado para o paciente.</p>
+          </div>
+          <div class="custom-hero__subtitle">
+            <p>
+              Descubra como&nbsp;ganhar mais tempo&nbsp;para seus pacientes (e
+              para você!).
+            </p>
+          </div>
+          <div class="wrapper-media">
+            <img
+              src="/assets/imgs/img3.png"
+              alt="Imagem da seção"
+              width="1200"
+              height="505"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="blocks-wrapper">
+            <div class="custom-block custom-block-1">
+              <div class="number-rotative" data-animated="true">1 milhão</div>
+
+              <div class="text-block">
+                <p>Prontuários criados automaticamente.</p>
+              </div>
+            </div>
+            <div class="custom-block custom-block-2">
+              <div class="number-rotative" data-animated="true">300.000</div>
+
+              <div class="text-block">
+                <p>Horas economizadas por psicólogos.</p>
+              </div>
+            </div>
+            <div class="custom-block custom-block-3">
+              <div class="aux-card">Até</div>
+
+              <div class="number-rotative" data-animated="true">35</div>
+
+              <div class="text-block">
+                <p>De faltas com confirmações e lembretes.</p>
+              </div>
+            </div>
+            <div class="custom-block custom-block-4">
+              <div class="aux-card">Até</div>
+
+              <div class="number-rotative" data-animated="true">82</div>
+
+              <div class="text-block">
+                <p>De adesão às atividades entre sessões.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-wrapper suporte-presente">
+        <div
+          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+        >
+          <div class="wrapper">
+            <div class="custom-hero__title">
+              <p>Suporte presente, humano e do seu lado</p>
+            </div>
+            <div class="custom-hero__subtitle">
+              <p>
+                Na Sintropia, você não fala com robôs. Nosso time responde
+                rápido, com escuta atenta e cuidado de verdade —<strong>
+                  para tirar dúvidas, acolher sugestões e caminhar junto com
+                  você em cada etapa da sua experiência.</strong
+                >
+              </p>
+            </div>
+            <div class="custom-hero__buttons-wrapper">
+              <a
+                href=""
+                class="custom-hero__button gradient-flow"
+                style="color: #ffffff"
+                ><span>Fale com o suporte</span> </a
+              ><a
+                href=""
+                class="custom-hero__button"
+                style="
+                  color: #443853;
+
+                  background: #ffffff;
+                "
+                ><span class="svg-wrapper">
+                  <img
+                    src="/assets/imgs/img4.1.svg"
+                    alt="Agendar treinamento gratuito"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                  /> </span
+                ><span>Agendar treinamento gratuito</span>
+              </a>
+            </div>
+            <div class="custom-hero__text-users">
+              <img
+                src="/assets/imgs/img4.3.svg"
+                alt="Imagem users"
+                width="150"
+                height="48"
+                loading="lazy"
+                fetch_priority="low"
+              />
+
+              <p>
+                <strong>@rafamagarinos.psi</strong> e outras PSi recomendam.
+              </p>
+
+              <div class="wrapper-stars">
+                <span class="svg-wrapper">
+                  <img
+                    src="./assets/icons/icon-star.svg"
+                    alt="star"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+                <span class="svg-wrapper">
+                  <img
+                    src="./assets/icons/icon-star.svg"
+                    alt="star"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+                <span class="svg-wrapper">
+                  <img
+                    src="./assets/icons/icon-star.svg"
+                    alt="star"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+                <span class="svg-wrapper">
+                  <img
+                    src="./assets/icons/icon-star.svg"
+                    alt="star"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+                <span class="svg-wrapper">
+                  <img
+                    src="./assets/icons/icon-star.svg"
+                    alt="star"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="wrapper-media">
+            <img
+              src="/assets/imgs/img4-main.png"
+              alt="Imagem da seção"
+              width="1200"
+              height="995"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="section-wrapper seguranca-dados" style="background: #fff">
+        <div
+          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+        >
+          <div class="wrapper">
+            <div class="custom-hero__aux" style="color: #5d4e70">
+              <p>segurança de ponta</p>
+            </div>
+            <div class="custom-hero__title">
+              <p>Segurança de dados à altura do sigilo terapêutico</p>
+            </div>
+            <div
+              class="custom-hero__subtitle"
+              style="
+                color: #5d4e70;
+
+                font-size: 16px;
+                font-weight: 400;
+              "
+            >
+              <p>
+                Sintropia foi construída para respeitar o mesmo sigilo que você
+                preserva em sessão. Utilizamos práticas modernas de
+                cibersegurança, criptografia de dados e controle rigoroso de
+                acesso para proteger prontuários, anotações e informações
+                financeiras.
+              </p>
+            </div>
+            <div class="custom-hero__buttons-wrapper">
+              <a
+                href=""
+                class="custom-hero__button gradient-flow"
+                style="color: #ffffff"
+                ><span>Experimente agora</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="wrapper-media">
+            <img
+              src="assets/imgs/img5.png"
+              alt="Imagem da seção"
+              width="1200"
+              height="1263"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="wrapper-cards">
+            <div class="seguranca-dados__card">
+              <div class="seguranca-dados__card-image">
+                <img
+                  src="assets/icons/icon-security-1.svg"
+                  alt="Icone do card"
+                  width="38"
+                  height="38"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="seguranca-dados__card-text">
+                <p>
+                  Único software de psicologia com camada de cibersegurança
+                  assinada pela Clavis, Empresa Estratégica de Defesa (EED)
+                  credenciada pelo Ministério da Defesa.
+                </p>
+              </div>
+            </div>
+
+            <div class="seguranca-dados__card">
+              <div class="seguranca-dados__card-image">
+                <img
+                  src="assets/icons/icon-security-2.svg"
+                  alt="Icone do card"
+                  width="38"
+                  height="38"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="seguranca-dados__card-text">
+                <p>
+                  Dados de pacientes criptografados, com sigilo reforçado e
+                  total aderência à LGPD.
+                </p>
+              </div>
+            </div>
+
+            <div class="seguranca-dados__card">
+              <div class="seguranca-dados__card-image">
+                <img
+                  src="assets/icons/icon-security-3.svg"
+                  alt="Icone do card"
+                  width="38"
+                  height="38"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="seguranca-dados__card-text">
+                <p>
+                  Gravações armazenadas criptografadas em nuvem de altíssima
+                  segurança, prontas para uso com tranquilidade total.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrapper motion-scroll-section">
+        <div
+          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+        >
+          <div class="custom-hero__aux">
+            <p>funcionalidades</p>
+          </div>
+          <div class="custom-hero__title">
+            <p>Funcionalidades pensadas para você</p>
+          </div>
+        </div>
+
+        <div class="wrapper-media">
+          <img
+            src="assets/imgs/img6.webp"
+            alt="Imagem da seção"
+            width="1200"
+            height="403"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section class="buy-area" id="Planos">
+        <div class="page-width">
+          <div class="wrapper-content">
+            <div class="left-content">
+              <div class="img-bg">
+                <img
+                  src="assets/imgs/img-flag.svg"
+                  alt="Imagem de fundo esquerda"
+                  width="202"
+                  height="234"
+                  loading="lazy"
+                  fetch_priority="low"
+                />
+              </div>
+
+              <div
+                class="title-content"
+                style="font-size: 40px; font-weight: 700"
+              >
+                <h2>Teste grátis, sem cobrança.</h2>
+              </div>
+              <div class="wrapper-item-content-left">
+                <div class="wrapper-first-3">
+                  <div class="item-content">
+                    <div class="icon-content">
+                      <img
+                        src="assets/icons/icon-check.svg"
+                        alt="icone check"
+                        width="18"
+                        height="18"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <div class="content-text">
+                      <p>
+                        Durante 15 dias, você experimenta os principais recursos
+                        da Sintropia.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="item-content">
+                    <div class="icon-content">
+                      <img
+                        src="assets/icons/icon-check.svg"
+                        alt="icone check"
+                        width="18"
+                        height="18"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <div class="content-text">
+                      <p>
+                        Sem cartão de crédito, sem renovação automática
+                        escondida.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="item-content">
+                    <div class="icon-content">
+                      <img
+                        src="assets/icons/icon-check.svg"
+                        alt="icone check"
+                        width="18"
+                        height="18"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <div class="content-text">
+                      <p>
+                        Agenda, SmartNotes, Evoluções por IA, Financeiro,
+                        Monitoramento e  muito mais.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="divider">
+                  <svg
+                    width="2"
+                    height="139"
+                    viewBox="0 0 2 139"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.5 139L0.500023 3.45707e-06"
+                      stroke="#EFEFF0"
+                    ></path>
+                    <path
+                      d="M1.5 139L1.50002 3.45707e-06"
+                      stroke="#E2D3F1"
+                    ></path>
+                  </svg>
+                </div>
+
+                <div class="wrapper-last">
+                  <div class="item-content">
+                    <div class="icon-content">
+                      <img
+                        src="assets/icons/icon-check.svg"
+                        alt="icone check"
+                        width="18"
+                        height="18"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <div class="content-text">
+                      <p>Prontuário gerado por IA</p>
+                    </div>
+                  </div>
+
+                  <div class="item-content">
+                    <div class="icon-content">
+                      <img
+                        src="assets/icons/icon-check.svg"
+                        alt="icone check"
+                        width="18"
+                        height="18"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <div class="content-text">
+                      <p>Sincronizado com Agenda Google</p>
+                    </div>
+                  </div>
+
+                  <div class="item-content">
+                    <div class="icon-content">
+                      <img
+                        src="assets/icons/icon-check.svg"
+                        alt="icone check"
+                        width="18"
+                        height="18"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <div class="content-text">
+                      <p>Agente de Marketing IA</p>
+                    </div>
+                  </div>
+
+                  <div class="item-content">
+                    <div class="icon-content">
+                      <img
+                        src="assets/icons/icon-check.svg"
+                        alt="icone check"
+                        width="18"
+                        height="18"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <div class="content-text">
+                      <p>Plano com 49% OFF se começar agora.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-content">
+              <div class="flag">
+                <p>- 49%OFF garantido.</p>
+              </div>
+
+              <div class="installment-parcel">
+                <p>12x de</p>
+              </div>
+
+              <div class="price-content">
+                <h3>R$ 59,90<strong>/ano</strong></h3>
+              </div>
+
+              <div class="a-vista">
+                <p>ou R$ 590 à vista</p>
+              </div>
+
+              <div class="buy-button">
+                <a
+                  class="buy-button gradient-flow"
+                  href=""
+                  title="Experimente grátis"
+                >
+                  Experimente grátis
+                </a>
+              </div>
+
+              <div class="item-content">
+                <div class="icon-content">
+                  <img
+                    src="assets/icons/icon-check.svg"
+                    alt="Ícone"
+                    srcset="assets/icons/icon-check.svg 18w"
+                    width="18"
+                    height="18"
+                    loading="lazy"
+                    fetch_priority="low"
+                  />
+                </div>
+                <div class="content-text">
+                  <p>Tudo que você testou mais</p>
+                </div>
+              </div>
+
+              <div class="item-content">
+                <div class="icon-content">
+                  <img
+                    src="assets/icons/icon-check.svg"
+                    alt="Ícone"
+                    srcset="assets/icons/icon-check.svg 18w"
+                    width="18"
+                    height="18"
+                    loading="lazy"
+                    fetch_priority="low"
+                  />
+                </div>
+                <div class="content-text">
+                  <p>Lembretes de Sessão e de Pagamento</p>
+                </div>
+              </div>
+
+              <div class="item-content">
+                <div class="icon-content">
+                  <img
+                    src="assets/icons/icon-check.svg"
+                    alt="Ícone"
+                    srcset="assets/icons/icon-check.svg 18w"
+                    width="18"
+                    height="18"
+                    loading="lazy"
+                    fetch_priority="low"
+                  />
+                </div>
+                <div class="content-text">
+                  <p>Sincronizar com Agenda Google</p>
+                </div>
+              </div>
+
+              <div class="item-content">
+                <div class="icon-content">
+                  <img
+                    src="assets/icons/icon-check.svg"
+                    alt="Ícone"
+                    srcset="assets/icons/icon-check.svg 18w"
+                    width="18"
+                    height="18"
+                    loading="lazy"
+                    fetch_priority="low"
+                  />
+                </div>
+                <div class="content-text">
+                  <p>Acesso para assistente</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-wrapper secao-reviews">
+        <div
+          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+        >
+          <div class="custom-hero__aux" style="color: #5d4e70">
+            <p>depoimentos</p>
+          </div>
+          <div class="custom-hero__title">
+            <p>Seja o próximo psicólogo a otimizar sua rotina!</p>
+          </div>
+        </div>
+
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="wrapper-card">
+                <div class="wrapper-media">
+                  <img
+                    src="assets/imgs/card-1.png"
+                    alt="Card 1 imagem"
+                    width="182"
+                    height="182"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="wrapper-right-content">
+                  <div class="wrapper-stars">
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+                  </div>
+
+                  <div class="wrapper-content">
+                    <div class="text-quote">
+                      <p>
+                        A Sintropia vai na direção de tudo que acredito: foco no
+                        essencial. Com ele, otimizo o meu tempo para preencher
+                        prontuários e realizar burocracias de agendamentos e de
+                        gestão clínica, e posso focar no que mais importa.
+                      </p>
+                    </div>
+
+                    <div clas="name-user" style="padding-top: 1rem">
+                      <p style="font-weight: 600; font-size: 14px">
+                        Marcela Yuhara
+                      </p>
+                    </div>
+                    <div class="arroba">
+                      <p>@marcelalamastra</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="wrapper-card">
+                <div class="wrapper-media">
+                  <img
+                    src="assets/imgs/card-2.png"
+                    alt="Card 1 imagem"
+                    width="182"
+                    height="182"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="wrapper-right-content">
+                  <div class="wrapper-stars">
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+                  </div>
+
+                  <div class="wrapper-content">
+                    <div class="text-quote">
+                      <p>
+                        A sintropia superou as expectativas. Existem muitas
+                        demandas na clínica que o psicólogo precisa abraçar, e o
+                        app conseguiu unir todas elas (prontuários, agenda,
+                        lembretes, financeiro e muito mais), de uma forma super
+                        intuitiva pra simplificar o dia a dia da clínica.
+                      </p>
+                    </div>
+
+                    <div clas="name-user" style="padding-top: 1rem">
+                      <p style="font-weight: 600; font-size: 14px">
+                        Mariana Baroni
+                      </p>
+                    </div>
+                    <div class="arroba">
+                      <p>@maribaronii</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="wrapper-card">
+                <div class="wrapper-media">
+                  <img
+                    src="assets/imgs/card-3.png"
+                    alt="Card 1 imagem"
+                    width="182"
+                    height="182"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="wrapper-right-content">
+                  <div class="wrapper-stars">
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+                  </div>
+
+                  <div class="wrapper-content">
+                    <div class="text-quote">
+                      <p>
+                        A Sintropia já chegou transformando a minha qualidade de
+                        vida no trabalho. O recurso de IA para os prontuários é
+                        fantástico e um grande facilitador da nossa prática
+                        clínica, assim como as ferramentas para o plano de ação.
+                      </p>
+                    </div>
+
+                    <div clas="name-user" style="padding-top: 1rem">
+                      <p style="font-weight: 600; font-size: 14px">
+                        Rafa Magarinos
+                      </p>
+                    </div>
+                    <div class="arroba">
+                      <p>@rafamagarinos.psi</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="wrapper-card">
+                <div class="wrapper-media">
+                  <img
+                    src="assets/imgs/card-4.png"
+                    alt="Card 1 imagem"
+                    width="182"
+                    height="182"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="wrapper-right-content">
+                  <div class="wrapper-stars">
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+
+                    <span class="svg-wrapper">
+                      <img
+                        src="./assets/icons/icon-star-review.svg"
+                        alt="Icone estrela review"
+                        width="20"
+                        height="20"
+                      />
+                    </span>
+                  </div>
+
+                  <div class="wrapper-content">
+                    <div class="text-quote">
+                      <p>
+                        Como Psicóloga, estou sempre procurando por ferramentas
+                        que possam facilitar meu trabalho e melhorar a
+                        experiência dos meus pacientes. E é exatamente isso que
+                        a Sintropia oferece.
+                      </p>
+                    </div>
+
+                    <div clas="name-user" style="padding-top: 1rem">
+                      <p style="font-weight: 600; font-size: 14px">
+                        Marcela Bohn
+                      </p>
+                    </div>
+                    <div class="arroba">
+                      <p>@psicologamarcelabohn</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrapper secao-faq" style="background: #fff">
+        <div
+          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+        >
+          <div class="custom-hero__aux">
+            <p>PERGUNTAS FREQUENTES</p>
+          </div>
+          <div class="custom-hero__title">
+            <p>Está com dúvidas? A gente te ajuda 💜</p>
+          </div>
+          <div class="wrapper-faq">
+            <details>
+              <summary>
+                <div class="title-faq"><p>O que é a Sintropia?</p></div>
+
+                <span class="svg-wrapper plus">
+                  <img
+                    src="./assets/icons/icon-plus.svg"
+                    alt="Icone mais ( abrir )"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+                <span class="svg-wrapper minus">
+                  <img
+                    src="./assets/icons/icon-minus.svg"
+                    alt="Icone menos ( fechar )"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  A Sintropia é um software 100% desenvolvido para psicólogas,
+                  pensado para otimizar todas as etapas do consultório em um
+                  único lugar. Nele, você gerencia agendamentos, prontuários,
+                  anotações, marketing, finanças e até o monitoramento dos
+                  pacientes, de forma integrada e prática.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                <div class="title-faq">
+                  <p>Como tenho acesso à Sintropia</p>
+                </div>
+
+                <span class="svg-wrapper plus">
+                  <img
+                    src="./assets/icons/icon-plus.svg"
+                    alt="Icone mais ( abrir )"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+                <span class="svg-wrapper minus">
+                  <img
+                    src="./assets/icons/icon-minus.svg"
+                    alt="Icone menos ( fechar )"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  A Sintropia é um software 100% desenvolvido para psicólogas,
+                  pensado para otimizar todas as etapas do consultório em um
+                  único lugar. Nele, você gerencia agendamentos, prontuários,
+                  anotações, marketing, finanças e até o monitoramento dos
+                  pacientes, de forma integrada e prática.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                <div class="title-faq">
+                  <p>
+                    A Sintropia é adequada para quem está começando na
+                    psicologia?
+                  </p>
+                </div>
+
+                <span class="svg-wrapper plus">
+                  <img
+                    src="./assets/icons/icon-plus.svg"
+                    alt="Icone mais ( abrir )"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+                <span class="svg-wrapper minus">
+                  <img
+                    src="./assets/icons/icon-minus.svg"
+                    alt="Icone menos ( fechar )"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  A Sintropia é um software 100% desenvolvido para psicólogas,
+                  pensado para otimizar todas as etapas do consultório em um
+                  único lugar. Nele, você gerencia agendamentos, prontuários,
+                  anotações, marketing, finanças e até o monitoramento dos
+                  pacientes, de forma integrada e prática.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                <div class="title-faq">
+                  <p>Por onde eu consigo acessar a Sintropia?</p>
+                </div>
+
+                <span class="svg-wrapper plus">
+                  <img
+                    src="./assets/icons/icon-plus.svg"
+                    alt="Icone mais ( abrir )"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+                <span class="svg-wrapper minus">
+                  <img
+                    src="./assets/icons/icon-minus.svg"
+                    alt="Icone menos ( fechar )"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  A Sintropia é um software 100% desenvolvido para psicólogas,
+                  pensado para otimizar todas as etapas do consultório em um
+                  único lugar. Nele, você gerencia agendamentos, prontuários,
+                  anotações, marketing, finanças e até o monitoramento dos
+                  pacientes, de forma integrada e prática.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                <div class="title-faq">
+                  <p>Caso eu necessite de ajuda, como entro em contato?</p>
+                </div>
+
+                <span class="svg-wrapper plus">
+                  <img
+                    src="./assets/icons/icon-plus.svg"
+                    alt="Icone mais ( abrir )"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+                <span class="svg-wrapper minus">
+                  <img
+                    src="./assets/icons/icon-minus.svg"
+                    alt="Icone menos ( fechar )"
+                    width="20"
+                    height="20"
+                  />
+                </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  A Sintropia é um software 100% desenvolvido para psicólogas,
+                  pensado para otimizar todas as etapas do consultório em um
+                  único lugar. Nele, você gerencia agendamentos, prontuários,
+                  anotações, marketing, finanças e até o monitoramento dos
+                  pacientes, de forma integrada e prática.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      id="footer"
+      class="shopify-section shopify-section-group-footer-group footer"
+    >
+      <div class="footer">
+        <div class="page-width">
+          <div class="fale-com-suporte">
+            <div clas="img-wrapper">
+              <img
+                src="/assets/imgs/avatar-2.svg"
+                alt=""
+                width="120"
+                height="58"
+                loading="lazy"
+              />
+            </div>
+            <div class="wrapper-text">
+              <div class="tile-wrapper">
+                <h3>Não conseguiu tirar sua dúvida?</h3>
+              </div>
+              <div class="content-wrapepr">
+                <p>Toque no botão para falar com nosso suporte</p>
+              </div>
+            </div>
+            <div>
+              <div class="suport-button">
+                <a href="" title="Falar com o suporte"> Falar com o suporte</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-width wrapper-footer-blocks">
+          <div class="logo-wrapper">
+            <div class="logo-footer">
+              <a href="/" title="Logo - Home">
+                <img
+                  src="./assets/icons/logo.svg"
+                  alt="Logo"
+                  width="217"
+                  height="45"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="link-list-footer">
+            <div class="title-footer">
+              <p>Quick links</p>
+            </div>
+            <ul
+              class="footer-block__details-content list-unstyled list-linked-footer"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="link link--text list-menu__item list-menu__item--link list-menu__item--active"
+                >
+                  Topo
+                  <img
+                    src="./assets/icons/icon-topo.svg"
+                    alt="Logo"
+                    width="20"
+                    height="20"
+                  />
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#Funcionalidades"
+                  class="link link--text list-menu__item list-menu__item--link"
+                >
+                  Funcionalidades
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#Depoimentos"
+                  class="link link--text list-menu__item list-menu__item--link"
+                >
+                  Depoimentos
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#Faq"
+                  class="link link--text list-menu__item list-menu__item--link"
+                >
+                  FAQ
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#Teste-gratis"
+                  class="link link--text list-menu__item list-menu__item--link"
+                >
+                  Teste grátis
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="socials wrapper">
+            <ul>
+              <li>
+                <a href="" target="_blank">
+                  <img
+                    src="assets/icons/icon-instagram.svg"
+                    alt="icone instagram"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="extra-footer-copy">
+          <div class="page-width wrapper-extra-footer">
+            <div class="left-copy">
+              <p>Todos os direitos reservados © 2025 Sintropia</p>
+            </div>
+            <div class="right">
+              <a
+                href="https://www.turbopartners.com.br/?utm_source=clients&amp;utm_medium=organic&amp;utm_campaign=footer&amp;utm_content=sintropia"
+                title="Turbo Partners"
+              >
+                <img src="assets/imgs/selo-turbo.png" alt="Turbo Partners" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/scripts/header.js" defer></script>
+    <script src="/assets/scripts/home.js" defer></script>
+  </body>
+</html>

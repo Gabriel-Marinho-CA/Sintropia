@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'DM Sans', system-ui, Arial, sans-serif;
+    ;
+    font-display: swap;
+}
+
+.page-width {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+
+    @media (max-width:749px) {
+        padding-inline: 1rem;
+    }
+
+    @media (min-width:750px) {
+        padding-inline: 2rem;
+    }
+
+    @media (min-width:1000px) {
+        padding-inline: 5rem;
+    }
+}
+
+main {
+    img {
+        display: block;
+        height: auto;
+    }
+}
+
+:root {
+    --primary-text-color: #5D4E70;
+    --title-primary-color: #443853;
+    --subtitle-primary-color: #443853;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    word-wrap: normal !important;
+}
+
+@font-face {
+    font-family: "Roca One";
+    src: url("/assets/fonts/roca-one-bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+.gradient-flow {
+    background: linear-gradient(92.74deg, #B1FFEF -4.7%, #9933FF 29.52%, #FFB0FF 99.32%);
+    background-size: 200% 200%;
+    background-position: left center;
+
+    transition: background-position 0.5s ease;
+}
+
+.gradient-flow:hover {
+    background-position: right center;
+}
+
+
+/* Animations */
+
+:root {
+    --duration-short: 100ms;
+    --duration-default: 200ms;
+    --duration-announcement-bar: 250ms;
+    --duration-medium: 300ms;
+    --duration-long: 500ms;
+    --duration-extra-long: 600ms;
+    --duration-extra-longer: 750ms;
+    --duration-extended: 3s;
+    --ease-out-slow: cubic-bezier(0, 0, 0.3, 1);
+    --animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
+    --animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .animate--ambient>img,
+    .animate--ambient>.svg-wrapper {
+        animation: animateAmbient 30s linear infinite;
+    }
+
+    @keyframes animateAmbient {
+        0% {
+            transform: rotate(0deg) translateX(1em) rotate(0deg) scale(1.2);
+        }
+
+        100% {
+            transform: rotate(360deg) translateX(1em) rotate(-360deg) scale(1.2);
+        }
+    }
+
+    .scroll-trigger.animate--fade-in,
+    .scroll-trigger.animate--slide-in {
+        opacity: 0.01;
+    }
+
+    .scroll-trigger.animate--slide-in {
+        transform: translateY(2rem);
+    }
+
+    .scroll-trigger:not(.scroll-trigger--offscreen).animate--fade-in {
+        opacity: 1;
+        animation: var(--animation-fade-in);
+    }
+
+    .scroll-trigger:not(.scroll-trigger--offscreen).animate--slide-in {
+        animation: var(--animation-slide-in);
+        animation-delay: calc(var(--animation-order) * 75ms);
+    }
+
+    .scroll-trigger.scroll-trigger--design-mode.animate--fade-in,
+    .scroll-trigger.scroll-trigger--design-mode.animate--slide-in,
+    .scroll-trigger.scroll-trigger--design-mode .slider,
+    .scroll-trigger:not(.scroll-trigger--offscreen).scroll-trigger--cancel {
+        opacity: 1;
+        animation: none;
+        transition: none;
+        transform: none;
+    }
+
+    .scroll-trigger.scroll-trigger--design-mode.animate--slide-in {
+        transform: translateY(0);
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(2rem);
+            opacity: 0.01;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0.01;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}

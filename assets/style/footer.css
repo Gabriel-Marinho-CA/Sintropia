@@ -45,9 +45,16 @@
                     font-weight: 500;
                     line-height: 140%;
                     text-decoration: none;
+<<<<<<< HEAD
 
                     &:hover {
                         text-decoration: underline;
+=======
+                    transition: color .42s ease;
+
+                    &:hover {
+                        color: var(--hover-link-color);
+>>>>>>> master
                     }
 
                     /* 22.4px */

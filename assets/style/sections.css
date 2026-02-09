@@ -69,7 +69,6 @@
             justify-content: center;
             gap: 1rem;
             text-decoration: none;
-            box-shadow: 0 4px 4px 0 rgba(223, 192, 255, 0.26) inset;
 
             @media (max-width:1000px) {
                 gap: .25rem;
@@ -362,7 +361,7 @@
         .aux-card {
             color: #DFC0FF;
             text-align: center;
-            font-family: "Plus Jakarta Sans";
+            font-family:  "Roca One";
             font-size: 18px;
             font-style: normal;
             font-weight: 600;
@@ -373,7 +372,7 @@
 
         .number-rotative {
             text-align: center;
-            font-family: "Plus Jakarta Sans";
+            font-family:  "Roca One";
             font-size: 46px;
             font-style: normal;
             font-weight: 600;

@@ -1,0 +1,179 @@
+.footer {
+
+    border-top: 1px solid #F7EFFF;
+    background: linear-gradient(202deg, #F9E9FF 14.54%, #DDFFF8 96.38%) !important;
+
+    .wrapper-footer-blocks {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 2rem;
+
+        @media (max-width:1000px) {
+            flex-direction: column;
+            padding-top: 4rem;
+        }
+
+        .link-list-footer {
+
+            .title-footer {
+                display: none;
+            }
+
+            ul {
+                display: flex;
+                align-items: center;
+                gap: 32px;
+
+                @media (max-width:1000px) {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                li:has(img) {
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: .35rem;
+                    }
+                }
+
+                * {
+                    color: #5D4E70;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 140%;
+                    text-decoration: none;
+                    transition: color .42s ease;
+
+                    &:hover {
+                        color: var(--hover-link-color);
+                    }
+
+                    /* 22.4px */
+                }
+
+                svg {
+                    margin-left: .45rem;
+                }
+            }
+        }
+
+        .socials {
+            @media(max-width:1000px) {
+                margin-top: 1rem;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                img {
+                    width: 24px;
+                    height: auto;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.wrapper-extra-footer {
+    border-top: 1px solid #fff;
+    padding-block: 2rem;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width:1000px) {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    * {
+        color: #5D4E70;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        margin: 0;
+        /* 22.4px */
+    }
+}
+
+.fale-com-suporte {
+    border-radius: 8px;
+    background: linear-gradient(93deg, #B1FFEF -4.7%, #BABDFD 29.52%, #FFB0FF 99.32%);
+    box-shadow: 0 7px 12.8px 0 rgba(155, 140, 172, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 3rem;
+    max-width: 836px;
+    margin-inline: auto;
+    padding: 16px 32px;
+    gap: 2rem;
+    margin-top: -45px;
+
+    @media (max-width:1000px) {
+        flex-direction: column;
+        padding-block: 32px;
+        margin-top: 2rem;
+        margin-bottom: -30px;
+
+        *:not(a) {
+            color: #443853 !important;
+        }
+    }
+
+    img {
+        display: block;
+        height: auto;
+    }
+
+    * {
+        margin: 0;
+    }
+
+    .tile-wrapper * {
+        color: #FFF;
+        text-align: center;
+        font-family: "Roca One";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+    }
+
+    .content-wrapepr * {
+        color: #FFF;
+        text-align: start;
+
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+
+
+        @media (max-width:1000px) {
+            text-align: center;
+        }
+    }
+
+    .suport-button a {
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.40);
+        background: linear-gradient(93deg, #FFB0FF -4.7%, #BABDFD 70.81%, #B1FFEF 99.32%);
+        box-shadow: 0 5px 1.1px 3px rgba(255, 255, 255, 0.25) inset, 0 3px 2px 0 rgba(0, 0, 0, 0.04);
+        text-decoration: none;
+        color: #FFF;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+        padding: 10px 18px;
+    }
+}

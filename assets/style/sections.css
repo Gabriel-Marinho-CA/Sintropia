@@ -179,6 +179,7 @@
 
             @media (max-width:750px) {
                 grid-template-columns: repeat(1, 1fr);
+                gap: 1rem;
             }
         }
 
@@ -521,6 +522,7 @@
                 height: auto;
                 display: block;
                 opacity: 0;
+
                 &:not(:first-child) {
                     margin-left: -10px;
                 }
@@ -761,6 +763,10 @@
     }
 
     .wrapper-right {
+
+        @media (min-width:700px) {
+            max-width: 556px;
+        }
 
         img,
         video {

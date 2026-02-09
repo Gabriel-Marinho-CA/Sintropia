@@ -45,16 +45,10 @@
                     font-weight: 500;
                     line-height: 140%;
                     text-decoration: none;
-<<<<<<< HEAD
-
-                    &:hover {
-                        text-decoration: underline;
-=======
                     transition: color .42s ease;
 
                     &:hover {
                         color: var(--hover-link-color);
->>>>>>> master
                     }
 
                     /* 22.4px */
@@ -79,6 +73,11 @@
                     width: 24px;
                     height: auto;
                     display: block;
+                    transition: transform .25s ease;
+
+                    &:hover {
+                        transform: scale(1.03);
+                    }
                 }
             }
         }
@@ -122,6 +121,7 @@
     padding: 16px 32px;
     gap: 2rem;
     margin-top: -45px;
+
 
     @media (max-width:1000px) {
         flex-direction: column;
@@ -181,5 +181,13 @@
         font-weight: 600;
         line-height: 140%;
         padding: 10px 18px;
+
+        transition: background-position .3s ease;
+        background-position: left center;
+        background-size: 200% 200%;
+
+        &:hover {
+            background-position: right center;
+        }
     }
 }

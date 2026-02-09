@@ -41,14 +41,6 @@ main {
     }
 }
 
-<<<<<<< HEAD
-:root {
-    --primary-text-color: #5D4E70;
-    --title-primary-color: #443853;
-    --subtitle-primary-color: #443853;
-}
-=======
->>>>>>> master
 
 .visually-hidden {
     position: absolute !important;
@@ -80,11 +72,6 @@ main {
 
 .gradient-flow:hover {
     background-position: right center;
-<<<<<<< HEAD
-} 
-
-
-=======
 }
 
 
@@ -98,7 +85,6 @@ main {
     box-shadow: 0 -1px 4px 1px rgba(187, 122, 255, 0.26) inset !important;
 }
 
->>>>>>> master
 /* Animations */
 
 :root {
@@ -113,14 +99,11 @@ main {
     --ease-out-slow: cubic-bezier(0, 0, 0.3, 1);
     --animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
     --animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
-<<<<<<< HEAD
-=======
 
     --primary-text-color: #5D4E70;
     --title-primary-color: #443853;
     --subtitle-primary-color: #443853;
     --hover-link-color: #8a2ee6;
->>>>>>> master
 }
 
 @media (prefers-reduced-motion: no-preference) {

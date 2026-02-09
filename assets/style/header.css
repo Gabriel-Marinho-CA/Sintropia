@@ -46,9 +46,16 @@ sticky-header {
             }
 
             @media (max-width:800px) {
-                 .icon-close {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                width: 36px;
+
+                .icon-close {
                     display: none;
-                 }
+                    width: 25px;
+                }
+
                 &.active {
                     .icon-hamburguer {
                         display: none;

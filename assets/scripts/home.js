@@ -1,62 +1,65 @@
 document.addEventListener("DOMContentLoaded", () => {
-function animateCounter(counter) {
-  if (counter.dataset.animated === "true") return;
-  counter.dataset.animated = "true";
+  function animateCounter(counter) {
+    if (counter.dataset.animated === "true") return;
+    counter.dataset.animated = "true";
 
-  // pega sempre do atributo
-  let target = parseInt(counter.dataset.target);
+    // pega sempre do atributo
+    let target = parseInt(counter.dataset.target);
 
-  if (isNaN(target)) return;
+    if (isNaN(target)) return;
 
-  let duration = 2000;
-  let interval = 30;
-  let steps = duration / interval;
+    let duration = 2000;
+    let interval = 30;
+    let steps = duration / interval;
 
-  let current = 0;
-  let step = Math.ceil(target / steps);
+    let current = 0;
+    let step = Math.ceil(target / steps);
 
-  function updateCounter() {
-    current += step;
+    function updateCounter() {
+      current += step;
 
-    if (current >= target) {
-      current = target;
+      if (current >= target) {
+        current = target;
 
-      if (target === 1000000) {
-        counter.innerText = "1 milhão";
-      } else {
-        counter.innerText = target.toLocaleString("pt-BR");
+        if (target === 1000000) {
+          counter.innerText = "1 milhão";
+        } else {
+          counter.innerText = target.toLocaleString("pt-BR");
+        }
+        return;
       }
-      return;
+
+      counter.innerText = current.toLocaleString("pt-BR");
+      setTimeout(updateCounter, interval);
     }
 
-    counter.innerText = current.toLocaleString("pt-BR");
-    setTimeout(updateCounter, interval);
+    updateCounter();
   }
 
-  updateCounter();
-}
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-      }
-    });
-  },
-  { threshold: 0.5 }
-);
-
-document.querySelectorAll(".number-rotative").forEach((counter) => {
-  observer.observe(counter);
-});
-
+  document.querySelectorAll(".number-rotative").forEach((counter) => {
+    observer.observe(counter);
+  });
 
   new Swiper(".swiper", {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
 
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
     autoplay: {
       delay: 4000,
       disableOnInteraction: false,
@@ -106,10 +109,10 @@ function onIntersection(elements, observer) {
 
 function initializeScrollAnimationTrigger(
   rootEl = document,
-  isDesignModeEvent = false
+  isDesignModeEvent = false,
 ) {
   const animationTriggerElements = Array.from(
-    rootEl.getElementsByClassName(SCROLL_ANIMATION_TRIGGER_CLASSNAME)
+    rootEl.getElementsByClassName(SCROLL_ANIMATION_TRIGGER_CLASSNAME),
   );
   if (animationTriggerElements.length === 0) return;
 
@@ -131,7 +134,7 @@ function initializeScrollZoomAnimationTrigger() {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   const animationTriggerElements = Array.from(
-    document.getElementsByClassName(SCROLL_ZOOM_IN_TRIGGER_CLASSNAME)
+    document.getElementsByClassName(SCROLL_ZOOM_IN_TRIGGER_CLASSNAME),
   );
 
   if (animationTriggerElements.length === 0) return;
@@ -149,7 +152,7 @@ function initializeScrollZoomAnimationTrigger() {
 
     element.style.setProperty(
       "--zoom-in-ratio",
-      1 + scaleAmount * percentageSeen(element)
+      1 + scaleAmount * percentageSeen(element),
     );
 
     window.addEventListener(
@@ -159,10 +162,10 @@ function initializeScrollZoomAnimationTrigger() {
 
         element.style.setProperty(
           "--zoom-in-ratio",
-          1 + scaleAmount * percentageSeen(element)
+          1 + scaleAmount * percentageSeen(element),
         );
       }),
-      { passive: true }
+      { passive: true },
     );
   });
 }

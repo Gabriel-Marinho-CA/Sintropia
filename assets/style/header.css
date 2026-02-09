@@ -30,9 +30,10 @@ sticky-header {
                 font-style: normal;
                 font-weight: 600;
                 color: var(--primary-text-color);
+                transition: color .42s ease;
 
                 &:hover {
-                    text-decoration: underline;
+                    color: var(--hover-link-color);
                 }
             }
         }
@@ -42,6 +43,24 @@ sticky-header {
 
             @media (min-width:800px) {
                 display: none;
+            }
+        }
+
+        .login-area {
+            .header__icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 46px;
+                border-radius: 50%;
+                /* background: linear-gradient(93deg, #B1FFEF -4.7%, #93F 29.52%, #FFB0FF 99.32%);
+                box-shadow: -1px -2px 4px 0 rgba(0, 0, 0, 0.17) inset;
+                transition: background .35s ease; */
+
+                &:hover {
+
+                }
             }
         }
 

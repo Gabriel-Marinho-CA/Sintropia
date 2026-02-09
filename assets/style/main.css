@@ -41,11 +41,6 @@ main {
     }
 }
 
-:root {
-    --primary-text-color: #5D4E70;
-    --title-primary-color: #443853;
-    --subtitle-primary-color: #443853;
-}
 
 .visually-hidden {
     position: absolute !important;
@@ -77,8 +72,18 @@ main {
 
 .gradient-flow:hover {
     background-position: right center;
-} 
+}
 
+
+
+.deep-shadow {
+    transition: box-shadow .3s ease;
+    box-shadow: 0 0px 4px 0 rgba(223, 192, 255, 0.26) inset;
+}
+
+.deep-shadow:hover {
+    box-shadow: 0 -1px 4px 1px rgba(187, 122, 255, 0.26) inset !important;
+}
 
 /* Animations */
 
@@ -94,6 +99,11 @@ main {
     --ease-out-slow: cubic-bezier(0, 0, 0.3, 1);
     --animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
     --animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+
+    --primary-text-color: #5D4E70;
+    --title-primary-color: #443853;
+    --subtitle-primary-color: #443853;
+    --hover-link-color: #8a2ee6;
 }
 
 @media (prefers-reduced-motion: no-preference) {

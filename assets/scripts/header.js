@@ -31,7 +31,7 @@ class StickyHeader extends HTMLElement {
 
     document.documentElement.style.setProperty(
       "--header-height",
-      `${height}px`
+      `${height}px`,
     );
   }
 
@@ -55,8 +55,10 @@ document.addEventListener("DOMContentLoaded", function () {
   burguer_btn.addEventListener("click", function () {
     if (mob_menu.classList.contains("active")) {
       mob_menu.classList.remove("active");
+      burguer_btn.classList.remove("active");
     } else {
       mob_menu.classList.add("active");
+      burguer_btn.classList.add("active");
     }
   });
   menu_items.forEach((el) => {

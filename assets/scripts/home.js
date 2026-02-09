@@ -80,7 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     },
   });
+
+  
 });
+
+// setTimeout(initMotionScroll, 200);
 
 const SCROLL_ANIMATION_TRIGGER_CLASSNAME = "scroll-trigger";
 const SCROLL_ANIMATION_OFFSCREEN_CLASSNAME = "scroll-trigger--offscreen";
@@ -190,7 +194,7 @@ function percentageSeen(element) {
   return Math.round(percentage);
 }
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('DOMContentLoaded', () => {
   initializeScrollAnimationTrigger();
   initializeScrollZoomAnimationTrigger();
 });

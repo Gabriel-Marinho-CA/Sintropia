@@ -44,6 +44,21 @@ sticky-header {
             @media (min-width:800px) {
                 display: none;
             }
+
+            @media (max-width:800px) {
+                 .icon-close {
+                    display: none;
+                 }
+                &.active {
+                    .icon-hamburguer {
+                        display: none;
+                    }
+
+                    .icon-close {
+                        display: block;
+                    }
+                }
+            }
         }
 
         .login-area {
@@ -58,9 +73,7 @@ sticky-header {
                 box-shadow: -1px -2px 4px 0 rgba(0, 0, 0, 0.17) inset;
                 transition: background .35s ease; */
 
-                &:hover {
-
-                }
+                &:hover {}
             }
         }
 
@@ -79,7 +92,7 @@ sticky-header {
     position: fixed;
     left: 0;
     top: var(--header-height);
-    transform: translateX(-110%);
+    transform: translateX(110%);
     height: 100%;
     width: 100%;
     background-color: #fff;

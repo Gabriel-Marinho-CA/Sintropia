@@ -78,6 +78,8 @@
       src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
       defer
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   </head>
   <body>
     <sticky-header>
@@ -158,8 +160,16 @@
           <img
             src="./assets/icons/icon-hamburguer.svg"
             alt="Icone menu"
-            width="44"
-            height="44"
+             class="icon-hamburguer"
+            width="36"
+            height="36"
+          />
+          <img
+            class="icon-close"
+            src="./assets/icons/icon-close.svg"
+            alt="Icone fechar"
+            width="36"
+            height="36"
           />
         </div>
       </header>
@@ -213,7 +223,7 @@
     <main>
       <section id="inicio" class="section-wrapper hero-section">
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width "
         >
           <div class="custom-hero__title">
             <p>Quando o acolhimento desenha cada detalhe da experiência.</p>
@@ -263,7 +273,7 @@
 
       <section class="section-wrapper routine-section">
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="custom-hero__title">
             <p>Sua rotina no consultório está sobrecarregada?</p>
@@ -287,12 +297,13 @@
                   </div>
                 </div>
 
-                <div class="wrapper-media-card">
+                <div class="wrapper-media-card smart-notes">
                   <video
                     src="./assets/videos/smart-notes.webm"
                     autoplay
                     loop
                     muted
+                    loading="lazy"
                     playsinline
                     width="384"
                     height="154"
@@ -320,6 +331,7 @@
                     autoplay
                     loop
                     muted
+                    loading="lazy"
                     playsinline
                     width="384"
                     height="142"
@@ -353,6 +365,7 @@
                     autoplay
                     loop
                     muted
+                    loading="lazy"
                     playsinline
                     width="384"
                     height="158"
@@ -386,6 +399,7 @@
                     autoplay
                     loop
                     muted
+                    loading="lazy"
                     playsinline
                     width="384"
                     height="169"
@@ -420,6 +434,7 @@
                   loop
                   muted
                   playsinline
+                  loading="lazy"
                   width="384"
                   height="479"
                 ></video>
@@ -439,7 +454,7 @@
         class="section-wrapper pensando-profissional section-template--19774271160489__tp_pensado_profissional_tnQqyj-padding"
       >
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="custom-hero__aux">
             <p>sistema smart notes</p>
@@ -501,7 +516,7 @@
       </section>
       <section class="section-wrapper suporte-presente">
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="wrapper">
             <div class="custom-hero__title">
@@ -613,7 +628,7 @@
       </section>
       <section class="section-wrapper seguranca-dados" style="background: #fff">
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="wrapper">
             <div class="custom-hero__aux" style="color: #5d4e70">
@@ -726,7 +741,7 @@
         id="Funcionalidades"
       >
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="custom-hero__aux">
             <p>funcionalidades</p>
@@ -736,14 +751,195 @@
           </div>
         </div>
 
-        <div class="wrapper-media">
-          <img
-            src="assets/imgs/img6.webp"
-            alt="Imagem da seção"
-            width="1200"
-            height="403"
-            loading="lazy"
-          />
+        <div class="wrapper-cards-motion motion-scroll-track">
+          <div class="wrapper-card">
+            <div class="wrapper-left-side">
+              <div class="custom-hero__aux">
+                <p>funcionalidades</p>
+              </div>
+              <div class="custom-hero__title">
+                <p>Menu do paciente</p>
+              </div>
+              <div class="content-motion">
+                <p>
+                  Tudo o que você precisa saber sobre o paciente em um só lugar
+                  — da anamnese ao prontuário, com acesso rápido ao histórico
+                  completo.
+                </p>
+              </div>
+              <div class="checks-area">
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Arquivo de Sessões</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Anamnese</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Biblioteca de Documentos</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Prontuários</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Resumo do Paciente</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Áudios Gravados</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>E muito mais.</p>
+                </div>
+              </div>
+            </div>
+            <div class="wrapper-right">
+              <img
+                src="assets/imgs/motion-1.png"
+                alt="Imagem direita mmotion"
+                width="377"
+                height="394"
+                loading="lazy"
+                fetch_priority="low"
+              />
+            </div>
+          </div>
+          <div class="wrapper-card">
+            <div class="wrapper-left-side">
+              <div class="custom-hero__aux">
+                <p>funcionalidades</p>
+              </div>
+              <div class="custom-hero__title" style="max-width: 350px">
+                <p>Financeiro Descomplicado.</p>
+              </div>
+              <div class="content-motion">
+                <p>
+                  Controle pacotes e sessões avulsas, gere recibos do Receita
+                  Saúde e automatize lembretes de pagamento, mantendo o
+                  financeiro da clínica sempre em dia.
+                </p>
+              </div>
+              <div class="checks-area">
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Controle de Pagamentos</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Receita Saúde</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Lembretes de Pagamento</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Financeiro Automatizado</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Controle de Pacotes</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>E muito mais</p>
+                </div>
+              </div>
+            </div>
+            <div class="wrapper-right">
+              <img
+                src="assets/imgs/motion-2.png"
+                alt="Imagem direita mmotion"
+                width="377"
+                height="394"
+                loading="lazy"
+                fetch_priority="low"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1021,7 +1217,7 @@
       </section>
       <section class="section-wrapper secao-reviews" id="Depoimentos">
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="custom-hero__aux" style="color: #5d4e70">
             <p>depoimentos</p>
@@ -1374,7 +1570,7 @@
         style="background: #fff"
       >
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="custom-hero__aux">
             <p>PERGUNTAS FREQUENTES</p>
@@ -1563,7 +1759,7 @@
       class="shopify-section shopify-section-group-footer-group footer"
     >
       <div class="footer">
-        <div class="page-width">
+        <div class="page-width scroll-trigger animate--fade-in">
           <div class="fale-com-suporte">
             <div clas="img-wrapper">
               <img
@@ -1699,7 +1895,34 @@
       </div>
     </footer>
 
-    <script src="assets/scripts/header.js" defer></script>
-    <script src="assets/scripts/home.js" defer></script>
+    <script>
+      window.addEventListener("load", function () {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const section = document.querySelector(".motion-scroll-section");
+        const track = document.querySelector(".motion-scroll-track");
+
+        let scrollDistance = track.scrollWidth - window.innerWidth;
+
+        console.log(scrollDistance);
+
+        gsap.to(track, {
+          x: -scrollDistance,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: () => `+=${scrollDistance}`,
+            scrub: 1,
+            pin: true,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        ScrollTrigger.refresh();
+      });
+    </script>
   </body>
+  <script src="assets/scripts/header.js" defer></script>
+  <script src="assets/scripts/home.js" defer></script>
 </html>

@@ -512,10 +512,18 @@
                 gap: 1rem;
             }
 
+            .wrapper-user {
+                display: flex;
+                align-items: center;
+            }
+
             img {
                 height: auto;
                 display: block;
-                max-width: 106px;
+                opacity: 0;
+                &:not(:first-child) {
+                    margin-left: -10px;
+                }
             }
 
             p {

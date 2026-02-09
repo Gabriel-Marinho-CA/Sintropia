@@ -14,7 +14,12 @@
     <link rel="preload" href="./assets/style/main.css" as="style" />
 
     <!-- Immagem principal -->
-    <link rel="preload" href="assets/imgs/img1.png" as="image" />
+    <link
+      rel="preload"
+      href="assets/imgs/img1.png"
+      as="image"
+      fetchpriority="high"
+    />
 
     <link rel="stylesheet" href="./assets/style/main.css" />
 
@@ -78,8 +83,19 @@
       src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
       defer
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <!-- Preconnect pro CDN -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+    <!-- GSAP sem bloquear render -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+      defer
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+      defer
+    ></script>
   </head>
   <body>
     <sticky-header>
@@ -160,7 +176,7 @@
           <img
             src="./assets/icons/icon-hamburguer.svg"
             alt="Icone menu"
-             class="icon-hamburguer"
+            class="icon-hamburguer"
             width="36"
             height="36"
           />
@@ -222,9 +238,7 @@
     </div>
     <main>
       <section id="inicio" class="section-wrapper hero-section">
-        <div
-          class="custom-hero__content page-width "
-        >
+        <div class="custom-hero__content page-width">
           <div class="custom-hero__title">
             <p>Quando o acolhimento desenha cada detalhe da experiência.</p>
           </div>
@@ -557,14 +571,52 @@
               </a>
             </div>
             <div class="custom-hero__text-users">
-              <img
+              <div class="wrapper-user">
+                <img
+                  src="assets/imgs/user-1.png"
+                  alt="Imagem usuario 1"
+                  width="35"
+                  class="animation-order-1"
+                  height="35"
+                  loading="lazy"
+                  fetch_priority="low"
+                />
+                <img
+                  src="assets/imgs/user-2.png"
+                  alt="Imagem usuario 2"
+                  width="35"
+                  class="animation-order-2"
+                  height="35"
+                  loading="lazy"
+                  fetch_priority="low"
+                />
+                <img
+                  src="assets/imgs/user-3.png"
+                  alt="Imagem usuario 3"
+                  width="35"
+                  class="animation-order-3"
+                  height="35"
+                  loading="lazy"
+                  fetch_priority="low"
+                />
+                <img
+                  src="assets/imgs/user-4.png"
+                  alt="Imagem usuario 4"
+                  width="35"
+                  class="animation-order-4"
+                  height="35"
+                  loading="lazy"
+                  fetch_priority="low"
+                />
+              </div>
+              <!-- <img
                 src="assets/imgs/img4.3.svg"
                 alt="Imagem users"
                 width="150"
                 height="48"
                 loading="lazy"
                 fetch_priority="low"
-              />
+              /> -->
 
               <p>
                 <strong>@rafamagarinos.psi</strong> e outras PSi recomendam.
@@ -1114,10 +1166,16 @@
               <div class="flag">
                 <div class="flag-track">
                   <p>
-                    - 49%OFF garantido. - 49%OFF garantido. - 49%OFF garantido.
+                    - 49%OFF garantido. 
                   </p>
                   <p>
-                    - 49%OFF garantido. - 49%OFF garantido. - 49%OFF garantido.
+                    - 49%OFF garantido.
+                  </p>
+                  <p>
+                    - 49%OFF garantido.
+                  </p>
+                  <p>
+                    - 49%OFF garantido.
                   </p>
                 </div>
               </div>
@@ -1904,8 +1962,6 @@
 
         let scrollDistance = track.scrollWidth - window.innerWidth;
 
-        console.log(scrollDistance);
-
         gsap.to(track, {
           x: -scrollDistance,
           ease: "none",
@@ -1920,6 +1976,25 @@
         });
 
         ScrollTrigger.refresh();
+      });
+    </script>
+
+    <script>
+      window.addEventListener("load", () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".wrapper-user img", {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.15, // aparece um por um
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".wrapper-user",
+            start: "top 80%",
+            once: true, // anima só uma vez
+          },
+        });
       });
     </script>
   </body>

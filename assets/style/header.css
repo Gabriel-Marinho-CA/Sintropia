@@ -30,16 +30,10 @@ sticky-header {
                 font-style: normal;
                 font-weight: 600;
                 color: var(--primary-text-color);
-<<<<<<< HEAD
-
-                &:hover {
-                    text-decoration: underline;
-=======
                 transition: color .42s ease;
 
                 &:hover {
                     color: var(--hover-link-color);
->>>>>>> master
                 }
             }
         }
@@ -50,10 +44,30 @@ sticky-header {
             @media (min-width:800px) {
                 display: none;
             }
+
+            @media (max-width:800px) {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                width: 36px;
+
+                .icon-close {
+                    display: none;
+                    width: 25px;
+                }
+
+                &.active {
+                    .icon-hamburguer {
+                        display: none;
+                    }
+
+                    .icon-close {
+                        display: block;
+                    }
+                }
+            }
         }
 
-<<<<<<< HEAD
-=======
         .login-area {
             .header__icon {
                 display: flex;
@@ -66,13 +80,10 @@ sticky-header {
                 box-shadow: -1px -2px 4px 0 rgba(0, 0, 0, 0.17) inset;
                 transition: background .35s ease; */
 
-                &:hover {
-
-                }
+                &:hover {}
             }
         }
 
->>>>>>> master
         @media (max-width:800px) {
 
             .header__inline-menu,
@@ -88,7 +99,7 @@ sticky-header {
     position: fixed;
     left: 0;
     top: var(--header-height);
-    transform: translateX(-110%);
+    transform: translateX(110%);
     height: 100%;
     width: 100%;
     background-color: #fff;

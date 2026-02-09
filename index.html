@@ -1,17 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sintropia.</title>
-    <meta name="description" content="Sintropia. Descubra como ganhar mais tempo para você e seus pacientes">
+    <meta
+      name="description"
+      content="Sintropia. Descubra como ganhar mais tempo para você e seus pacientes"
+    />
     <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
 
     <!-- CSS principal -->
     <link rel="preload" href="./assets/style/main.css" as="style" />
 
     <!-- Immagem principal -->
-    <link rel="preload" href="assets/imgs/img1.png" as="image" />
+    <link
+      rel="preload"
+      href="assets/imgs/img1.png"
+      as="image"
+      fetchpriority="high"
+    />
 
     <link rel="stylesheet" href="./assets/style/main.css" />
 
@@ -20,19 +28,19 @@
       rel="stylesheet"
       href="./assets/style/header.css"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
     <link
       rel="stylesheet"
       href="./assets/style/sections.css"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
     <link
       rel="stylesheet"
       href="./assets/style/footer.css"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
 
     <!-- Google Fonts em 1 request -->
@@ -41,7 +49,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
 
     <!-- Preload fonte local -->
@@ -58,7 +66,10 @@
       rel="preload"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
     <noscript>
       <link
@@ -70,6 +81,19 @@
     <!-- Swiper JS defer -->
     <script
       src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"
+      defer
+    ></script>
+    <!-- Preconnect pro CDN -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+    <!-- GSAP sem bloquear render -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+      defer
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
       defer
     ></script>
   </head>
@@ -103,11 +127,11 @@
             <li>
               <a
                 id="HeaderMenu-sobre"
-                href="#Sobre"
+                href="#Depoimentos"
                 class="header__menu-item"
-                title="Sobre"
+                title="Depoimentos"
               >
-                <span>Sobre</span>
+                <span>Depoimentos</span>
               </a>
             </li>
             <li>
@@ -133,7 +157,12 @@
           </ul>
         </nav>
         <div class="login-area">
-          <a href="#" class="header__icon gradient-flow" rel="nofollow" title="Entrar">
+          <a
+            href="#"
+            class="header__icon gradient-flow"
+            rel="nofollow"
+            title="Entrar"
+          >
             <span class="visually-hidden">Entrar</span>
             <img
               src="./assets/icons/icon-user.svg"
@@ -147,8 +176,16 @@
           <img
             src="./assets/icons/icon-hamburguer.svg"
             alt="Icone menu"
-            width="44"
-            height="44"
+            class="icon-hamburguer"
+            width="36"
+            height="36"
+          />
+          <img
+            class="icon-close"
+            src="./assets/icons/icon-close.svg"
+            alt="Icone fechar"
+            width="36"
+            height="36"
           />
         </div>
       </header>
@@ -201,9 +238,7 @@
     </div>
     <main>
       <section id="inicio" class="section-wrapper hero-section">
-        <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
-        >
+        <div class="custom-hero__content page-width">
           <div class="custom-hero__title">
             <p>Quando o acolhimento desenha cada detalhe da experiência.</p>
           </div>
@@ -250,9 +285,9 @@
         </div>
       </section>
 
-      <section class="section-wrapper routine-section" id="Funcionalidades">
+      <section class="section-wrapper routine-section">
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="custom-hero__title">
             <p>Sua rotina no consultório está sobrecarregada?</p>
@@ -276,14 +311,17 @@
                   </div>
                 </div>
 
-                <div class="wrapper-media-card">
-                  <img
-                    src="./assets/imgs/img2.png"
-                    alt="Imagem do card"
+                <div class="wrapper-media-card smart-notes">
+                  <video
+                    src="./assets/videos/smart-notes.webm"
+                    autoplay
+                    loop
+                    muted
+                    loading="lazy"
+                    playsinline
                     width="384"
-                    height="251"
-           
-                  />
+                    height="154"
+                  ></video>
                 </div>
               </div>
 
@@ -302,13 +340,22 @@
                 </div>
 
                 <div class="wrapper-media-card">
-                  <img
+                  <video
+                    src="./assets/videos/prontuario.webm"
+                    autoplay
+                    loop
+                    muted
+                    loading="lazy"
+                    playsinline
+                    width="384"
+                    height="142"
+                  ></video>
+                  <!-- <img
                     src="./assets/imgs/img2.1.png"
                     alt="Imagem do card"
                     width="384"
                     height="141"
-                 
-                  />
+                  /> -->
                 </div>
               </div>
 
@@ -327,13 +374,22 @@
                 </div>
 
                 <div class="wrapper-media-card">
-                  <img
+                  <video
+                    src="./assets/videos/calendario.webm"
+                    autoplay
+                    loop
+                    muted
+                    loading="lazy"
+                    playsinline
+                    width="384"
+                    height="158"
+                  ></video>
+                  <!-- <img
                     src="./assets/imgs/img2.2.png"
                     alt="Imagem do card"
                     width="384"
                     height="123"
-                
-                  />
+                  /> -->
                 </div>
               </div>
 
@@ -352,13 +408,22 @@
                 </div>
 
                 <div class="wrapper-media-card">
-                  <img
+                  <video
+                    src="./assets/videos/lembretes-wpp.webm"
+                    autoplay
+                    loop
+                    muted
+                    loading="lazy"
+                    playsinline
+                    width="384"
+                    height="169"
+                  ></video>
+                  <!-- <img
                     src="./assets/imgs/img2.3.png"
                     alt="Imagem do card"
                     width="384"
                     height="169"
-            
-                  />
+                  /> -->
                 </div>
               </div>
             </div>
@@ -377,13 +442,22 @@
               </div>
 
               <div class="wrapper-media-card">
-                <img
+                <video
+                  src="./assets/videos/financeiro.webm"
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  loading="lazy"
+                  width="384"
+                  height="479"
+                ></video>
+                <!-- <img
                   src="./assets/imgs/img2.4.png"
                   alt="Imagem do card especial"
                   width="384"
                   height="479"
-                
-                />
+                /> -->
               </div>
             </div>
           </div>
@@ -394,7 +468,7 @@
         class="section-wrapper pensando-profissional section-template--19774271160489__tp_pensado_profissional_tnQqyj-padding"
       >
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="custom-hero__aux">
             <p>sistema smart notes</p>
@@ -420,7 +494,7 @@
 
           <div class="blocks-wrapper">
             <div class="custom-block custom-block-1">
-              <div class="number-rotative"  data-target="1000000">1 milhão</div>
+              <div class="number-rotative" data-target="1000000">1 milhão</div>
 
               <div class="text-block">
                 <p>Prontuários criados automaticamente.</p>
@@ -456,7 +530,7 @@
       </section>
       <section class="section-wrapper suporte-presente">
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="wrapper">
             <div class="custom-hero__title">
@@ -497,14 +571,52 @@
               </a>
             </div>
             <div class="custom-hero__text-users">
-              <img
+              <div class="wrapper-user">
+                <img
+                  src="assets/imgs/user-1.png"
+                  alt="Imagem usuario 1"
+                  width="35"
+                  class="animation-order-1"
+                  height="35"
+                  loading="lazy"
+                  fetch_priority="low"
+                />
+                <img
+                  src="assets/imgs/user-2.png"
+                  alt="Imagem usuario 2"
+                  width="35"
+                  class="animation-order-2"
+                  height="35"
+                  loading="lazy"
+                  fetch_priority="low"
+                />
+                <img
+                  src="assets/imgs/user-3.png"
+                  alt="Imagem usuario 3"
+                  width="35"
+                  class="animation-order-3"
+                  height="35"
+                  loading="lazy"
+                  fetch_priority="low"
+                />
+                <img
+                  src="assets/imgs/user-4.png"
+                  alt="Imagem usuario 4"
+                  width="35"
+                  class="animation-order-4"
+                  height="35"
+                  loading="lazy"
+                  fetch_priority="low"
+                />
+              </div>
+              <!-- <img
                 src="assets/imgs/img4.3.svg"
                 alt="Imagem users"
                 width="150"
                 height="48"
                 loading="lazy"
                 fetch_priority="low"
-              />
+              /> -->
 
               <p>
                 <strong>@rafamagarinos.psi</strong> e outras PSi recomendam.
@@ -568,7 +680,7 @@
       </section>
       <section class="section-wrapper seguranca-dados" style="background: #fff">
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="wrapper">
             <div class="custom-hero__aux" style="color: #5d4e70">
@@ -676,9 +788,12 @@
         </div>
       </section>
 
-      <section class="section-wrapper motion-scroll-section">
+      <section
+        class="section-wrapper motion-scroll-section"
+        id="Funcionalidades"
+      >
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="custom-hero__aux">
             <p>funcionalidades</p>
@@ -688,14 +803,195 @@
           </div>
         </div>
 
-        <div class="wrapper-media">
-          <img
-            src="assets/imgs/img6.webp"
-            alt="Imagem da seção"
-            width="1200"
-            height="403"
-            loading="lazy"
-          />
+        <div class="wrapper-cards-motion motion-scroll-track">
+          <div class="wrapper-card">
+            <div class="wrapper-left-side">
+              <div class="custom-hero__aux">
+                <p>funcionalidades</p>
+              </div>
+              <div class="custom-hero__title">
+                <p>Menu do paciente</p>
+              </div>
+              <div class="content-motion">
+                <p>
+                  Tudo o que você precisa saber sobre o paciente em um só lugar
+                  — da anamnese ao prontuário, com acesso rápido ao histórico
+                  completo.
+                </p>
+              </div>
+              <div class="checks-area">
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Arquivo de Sessões</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Anamnese</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Biblioteca de Documentos</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Prontuários</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Resumo do Paciente</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Áudios Gravados</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>E muito mais.</p>
+                </div>
+              </div>
+            </div>
+            <div class="wrapper-right">
+              <img
+                src="assets/imgs/motion-1.png"
+                alt="Imagem direita mmotion"
+                width="377"
+                height="394"
+                loading="lazy"
+                fetch_priority="low"
+              />
+            </div>
+          </div>
+          <div class="wrapper-card">
+            <div class="wrapper-left-side">
+              <div class="custom-hero__aux">
+                <p>funcionalidades</p>
+              </div>
+              <div class="custom-hero__title" style="max-width: 350px">
+                <p>Financeiro Descomplicado.</p>
+              </div>
+              <div class="content-motion">
+                <p>
+                  Controle pacotes e sessões avulsas, gere recibos do Receita
+                  Saúde e automatize lembretes de pagamento, mantendo o
+                  financeiro da clínica sempre em dia.
+                </p>
+              </div>
+              <div class="checks-area">
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Controle de Pagamentos</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Receita Saúde</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Lembretes de Pagamento</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Financeiro Automatizado</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>Controle de Pacotes</p>
+                </div>
+                <div class="check-element">
+                  <img
+                    src="./assets/icons/icon-check-2.svg"
+                    alt="Icone check"
+                    width="15"
+                    height="15"
+                    loading="lazy"
+                  />
+                  <p>E muito mais</p>
+                </div>
+              </div>
+            </div>
+            <div class="wrapper-right">
+              <img
+                src="assets/imgs/motion-2.png"
+                alt="Imagem direita mmotion"
+                width="377"
+                height="394"
+                loading="lazy"
+                fetch_priority="low"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -868,7 +1164,20 @@
             </div>
             <div class="right-content">
               <div class="flag">
-                <p>- 49%OFF garantido.</p>
+                <div class="flag-track">
+                  <p>
+                    - 49%OFF garantido. 
+                  </p>
+                  <p>
+                    - 49%OFF garantido.
+                  </p>
+                  <p>
+                    - 49%OFF garantido.
+                  </p>
+                  <p>
+                    - 49%OFF garantido.
+                  </p>
+                </div>
               </div>
 
               <div class="installment-parcel">
@@ -964,9 +1273,9 @@
           </div>
         </div>
       </section>
-      <section class="section-wrapper secao-reviews">
+      <section class="section-wrapper secao-reviews" id="Depoimentos">
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="custom-hero__aux" style="color: #5d4e70">
             <p>depoimentos</p>
@@ -1309,12 +1618,17 @@
               </div>
             </div>
           </div>
+          <div class="swiper-pagination"></div>
         </div>
       </section>
 
-      <section class="section-wrapper secao-faq" style="background: #fff">
+      <section
+        class="section-wrapper secao-faq"
+        id="Faq"
+        style="background: #fff"
+      >
         <div
-          class="custom-hero__content page-width scroll-trigger animate--fade-in"
+          class="custom-hero__content page-width scroll-trigger animate--slide-in"
         >
           <div class="custom-hero__aux">
             <p>PERGUNTAS FREQUENTES</p>
@@ -1503,7 +1817,7 @@
       class="shopify-section shopify-section-group-footer-group footer"
     >
       <div class="footer">
-        <div class="page-width">
+        <div class="page-width scroll-trigger animate--fade-in">
           <div class="fale-com-suporte">
             <div clas="img-wrapper">
               <img
@@ -1524,7 +1838,9 @@
             </div>
             <div>
               <div class="suport-button">
-                <a href="" title="Falar com o suporte"> Falar com o suporte</a>
+                <a href="#Planos" title="Falar com o suporte">
+                  Falar com o suporte</a
+                >
               </div>
             </div>
           </div>
@@ -1594,7 +1910,7 @@
 
               <li>
                 <a
-                  href="#Teste-gratis"
+                  href="#Planos"
                   class="link link--text list-menu__item list-menu__item--link"
                 >
                   Teste grátis
@@ -1637,7 +1953,51 @@
       </div>
     </footer>
 
-    <script src="assets/scripts/header.js" defer></script>
-    <script src="assets/scripts/home.js" defer></script>
+    <script>
+      window.addEventListener("load", function () {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const section = document.querySelector(".motion-scroll-section");
+        const track = document.querySelector(".motion-scroll-track");
+
+        let scrollDistance = track.scrollWidth - window.innerWidth;
+
+        gsap.to(track, {
+          x: -scrollDistance,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: () => `+=${scrollDistance}`,
+            scrub: 1,
+            pin: true,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        ScrollTrigger.refresh();
+      });
+    </script>
+
+    <script>
+      window.addEventListener("load", () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".wrapper-user img", {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.15, // aparece um por um
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".wrapper-user",
+            start: "top 80%",
+            once: true, // anima só uma vez
+          },
+        });
+      });
+    </script>
   </body>
+  <script src="assets/scripts/header.js" defer></script>
+  <script src="assets/scripts/home.js" defer></script>
 </html>

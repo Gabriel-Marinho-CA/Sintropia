@@ -10,15 +10,51 @@
     />
     <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
 
-    <!-- CSS principal -->
-    <link rel="preload" href="./assets/style/main.css" as="style" />
+    <!-- CSS Crítico -->
+    <link
+      rel="preload"
+      href="./assets/style/critical.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
 
-    <!-- Immagem principal -->
+    <noscript>
+      <link rel="stylesheet" href="./assets/style/critical.css" />
+    </noscript>
+
+    <!-- Logo principal -->
+    <link
+      rel="preload"
+      href="assets/icons/logo.svg"
+      as="image"
+      fetchpriority="high"
+    />
+
+    <!-- Imagem principal -->
     <link
       rel="preload"
       href="assets/imgs/img1.png"
       as="image"
       fetchpriority="high"
+    />
+
+    <link
+      rel="preload"
+      href="assets/imgs/bg-1.png"
+      as="image"
+      fetchpriority="high"
+      media="(min-width: 1001px)"
+    />
+
+    <link
+      rel="preload"
+      href="assets/imgs/bg-1.1.png"
+      as="image"
+      fetchpriority="high"
+      media="(max-width: 1000px)"
     />
 
     <link rel="stylesheet" href="./assets/style/main.css" />
@@ -53,9 +89,10 @@
     />
 
     <!-- Preload fonte local -->
+
     <link
       rel="preload"
-      href="assets/fonts/roca-one-bold.woff2"
+      href="assets/fonts/Roca-Bold.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -77,6 +114,22 @@
         href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
       />
     </noscript>
+
+    <!-- Background acima da dobra -->
+
+    <style>
+      .hero-section {
+        background-image:
+          linear-gradient(rgba(249, 233, 255, 0) 0%, rgb(249, 233, 255) 100%),
+          url("assets/imgs/bg-1.png");
+      }
+
+      @media (max-width: 1000px) {
+        .hero-section {
+          background-image: url("assets/imgs/bg-1.1.png");
+        }
+      }
+    </style>
 
     <!-- Swiper JS defer -->
     <script
@@ -560,7 +613,7 @@
                 ><span class="svg-wrapper">
                   <img
                     src="assets/imgs/img4.1.svg"
-                    alt="Agendar treinamento gratuito"
+                    alt="Icone de agendamento de treinamento gratuito"
                     width="20"
                     height="20"
                     loading="lazy"

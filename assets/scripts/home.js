@@ -22,10 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
         current = target;
 
         if (target === 1000000) {
-          counter.innerText = "1 milhão";
+          counter.innerText = "1 Milhão";
         } else {
           counter.innerText = target.toLocaleString("pt-BR");
-        }
+        } 
         return;
       }
 

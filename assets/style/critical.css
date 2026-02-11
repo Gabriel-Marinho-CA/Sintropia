@@ -72,7 +72,7 @@ sticky-header {
         position: -webkit-sticky;
         top: 0;
         padding-block: 1rem;
-        margin-bottom: calc(-1 * var(--header-height));
+        margin-bottom: calc(-1 * var(--header-height, 87px));
         z-index: 3;
 
 
@@ -176,7 +176,7 @@ sticky-header {
 .mobile-menu {
     position: fixed;
     left: 0;
-    top: var(--header-height);
+    top: var(--header-height, 87px);
     transform: translateX(110%);
     height: 100%;
     width: 100%;

@@ -60,12 +60,7 @@
     <link rel="stylesheet" href="./assets/style/main.css" />
 
     <!-- CSS secundários async -->
-    <link
-      rel="stylesheet"
-      href="./assets/style/header.css"
-      media="print"
-      onload="this.media = 'all'"
-    />
+
     <link
       rel="stylesheet"
       href="./assets/style/sections.css"
@@ -230,15 +225,15 @@
             src="./assets/icons/icon-hamburguer.svg"
             alt="Icone menu"
             class="icon-hamburguer"
-            width="36"
-            height="36"
+            width="32"
+            height="32"
           />
           <img
             class="icon-close"
             src="./assets/icons/icon-close.svg"
             alt="Icone fechar"
-            width="36"
-            height="36"
+            width="32"
+            height="32"
           />
         </div>
       </header>
@@ -1253,7 +1248,7 @@
             </div>
             <div class="wrapper-right">
               <img
-                src="assets/imgs/motion-4.webp"
+                src="assets/imgs/motion-5.webp"
                 alt="Imagem direita mmotion"
                 width="377"
                 height="394"
@@ -2372,7 +2367,12 @@
                 href="https://www.turbopartners.com.br/?utm_source=clients&amp;utm_medium=organic&amp;utm_campaign=footer&amp;utm_content=sintropia"
                 title="Turbo Partners"
               >
-                <img src="assets/imgs/selo-turbo.png" alt="Turbo Partners" />
+                <img
+                  src="assets/imgs/selo-turbo.png"
+                  alt="Turbo Partners"
+                  width="136"
+                  height="45"
+                />
               </a>
             </div>
           </div>
@@ -2386,21 +2386,39 @@
 
         const section = document.querySelector(".motion-scroll-section");
         const track = document.querySelector(".motion-scroll-track");
+        const track_distance = document.querySelector(
+          ".motion-scroll-track .custom-hero__title",
+        );
 
-        let scrollDistance = track.scrollWidth - window.innerWidth;
-
-        gsap.to(track, {
-          x: -scrollDistance,
-          ease: "none",
-          scrollTrigger: {
-            trigger: section,
-            start: "top top",
-            end: () => `+=${scrollDistance}`,
-            scrub: 1,
-            pin: true,
-            invalidateOnRefresh: true,
-          },
-        });
+        if (window.innerWidth < 750) {
+          let scrollDistance = track.scrollWidth - window.innerWidth;
+          gsap.to(track, {
+            x: -scrollDistance,
+            ease: "none",
+            scrollTrigger: {
+              trigger: track,
+              start: "top top",
+              end: () => `+=${scrollDistance}`,
+              scrub: 1,
+              pin: true,
+              invalidateOnRefresh: true,
+            },
+          });
+        } else {
+          let scrollDistance = track.scrollWidth - window.innerWidth;
+          gsap.to(track, {
+            x: -scrollDistance,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top top",
+              end: () => `+=${scrollDistance}`,
+              scrub: 1,
+              pin: true,
+              invalidateOnRefresh: true,
+            },
+          });
+        }
 
         ScrollTrigger.refresh();
       });

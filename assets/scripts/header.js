@@ -3,15 +3,10 @@ class StickyHeader extends HTMLElement {
     this.header = this.querySelector("header");
     this.headerBounds = {};
 
-    this.setHeaderHeight(); // <-- seta logo ao carregar
-
+    this.setHeaderHeight();
     this.createObserver();
 
-    // Atualiza altura no resize também
     window.addEventListener("resize", () => {
-      this.setHeaderHeight();
-    });
-    window.addEventListener("load", () => {
       this.setHeaderHeight();
     });
 
@@ -24,6 +19,9 @@ class StickyHeader extends HTMLElement {
         this.header.classList.remove("scrolled-past-header");
       }
     });
+
+    // ✅ NOVO: esconder ao chegar na seção
+    this.hideOnSection("#Funcionalidades");
   }
 
   setHeaderHeight() {
@@ -43,27 +41,29 @@ class StickyHeader extends HTMLElement {
 
     observer.observe(this.header);
   }
+
+  // ✅ NOVA FUNÇÃO
+  hideOnSection(selector) {
+    const targetSection = document.querySelector(selector);
+    if (!targetSection) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          this.header.classList.add("hide-header");
+        } else {
+          this.header.classList.remove("hide-header");
+        }
+      },
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: `-${this.header.offsetHeight}px 0px 0px 0px`,
+      },
+    );
+
+    observer.observe(targetSection);
+  }
 }
 
 customElements.define("sticky-header", StickyHeader);
-
-document.addEventListener("DOMContentLoaded", function () {
-  const burguer_btn = document.getElementById("menu-hamburguer");
-  const mob_menu = document.getElementById("menu-mobile");
-  const menu_items = mob_menu.querySelectorAll(".header__menu-item");
-
-  burguer_btn.addEventListener("click", function () {
-    if (mob_menu.classList.contains("active")) {
-      mob_menu.classList.remove("active");
-      burguer_btn.classList.remove("active");
-    } else {
-      mob_menu.classList.add("active");
-      burguer_btn.classList.add("active");
-    }
-  });
-  menu_items.forEach((el) => {
-    el.addEventListener("click", function () {
-      mob_menu.classList.remove("active");
-    });
-  });
-});

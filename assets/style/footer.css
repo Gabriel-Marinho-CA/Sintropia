@@ -122,6 +122,10 @@
     gap: 2rem;
     margin-top: -45px;
 
+    @media (min-width:1001px) {
+        min-width: 900px;
+    }
+
 
     @media (max-width:1000px) {
         flex-direction: column;

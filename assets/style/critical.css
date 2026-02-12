@@ -74,10 +74,14 @@ sticky-header {
         padding-block: 1rem;
         margin-bottom: calc(-1 * var(--header-height, 87px));
         z-index: 3;
- transition: opacity 0.3s ease, transform 0.3s ease;
+        transition: opacity 0.3s ease, transform 0.3s ease;
 
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
+
+        @media (max-width:800px) {
+            margin-bottom: calc(-1 * var(--header-height, 64px));
+        }
 
         @media (max-width:1000px) {
             background-color: #fff;
@@ -86,8 +90,8 @@ sticky-header {
 
             &.hide-header {
                 opacity: 0;
-  transform: translateY(-20px);
-  pointer-events: none;
+                transform: translateY(-20px);
+                pointer-events: none;
             }
 
             .wrapper-logo {
@@ -199,6 +203,11 @@ sticky-header {
     z-index: 2;
     transition: all .45s ease;
     padding: 2rem;
+
+
+    @media (max-width:800px) {
+        top: var(--header-height, 64px);
+    }
 
     &.active {
         transform: translateX(0);
@@ -324,6 +333,12 @@ sticky-header {
     background-position: center;
     position: relative;
     overflow: hidden;
+
+
+    @media (max-width:800px) {
+        padding-top: calc(1.3 * var(--header-height, 64px));
+    }
+
 
     &::before {
         content: "";

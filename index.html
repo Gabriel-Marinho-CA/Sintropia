@@ -2390,8 +2390,9 @@
           ".motion-scroll-track .custom-hero__title",
         );
 
+        let scrollDistance = track.scrollWidth - window.innerWidth;
+
         if (window.innerWidth < 750) {
-          let scrollDistance = track.scrollWidth - window.innerWidth;
           gsap.to(track, {
             x: -scrollDistance,
             ease: "none",
@@ -2405,7 +2406,6 @@
             },
           });
         } else {
-          let scrollDistance = track.scrollWidth - window.innerWidth;
           gsap.to(track, {
             x: -scrollDistance,
             ease: "none",

@@ -67,3 +67,24 @@ class StickyHeader extends HTMLElement {
 }
 
 customElements.define("sticky-header", StickyHeader);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const burguer_btn = document.getElementById("menu-hamburguer");
+  const mob_menu = document.getElementById("menu-mobile");
+  const menu_items = mob_menu.querySelectorAll(".header__menu-item");
+
+  burguer_btn.addEventListener("click", function () {
+    if (mob_menu.classList.contains("active")) {
+      mob_menu.classList.remove("active");
+      burguer_btn.classList.remove("active");
+    } else {
+      mob_menu.classList.add("active");
+      burguer_btn.classList.add("active");
+    }
+  });
+  menu_items.forEach((el) => {
+    el.addEventListener("click", function () {
+      mob_menu.classList.remove("active");
+    });
+  });
+});

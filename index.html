@@ -2392,33 +2392,18 @@
 
         let scrollDistance = track.scrollWidth - window.innerWidth;
 
-        if (window.innerWidth < 750) {
-          gsap.to(track, {
-            x: -scrollDistance,
-            ease: "none",
-            scrollTrigger: {
-              trigger: track,
-              start: "top top",
-              end: () => `+=${scrollDistance}`,
-              scrub: 1,
-              pin: true,
-              invalidateOnRefresh: true,
-            },
-          });
-        } else {
-          gsap.to(track, {
-            x: -scrollDistance,
-            ease: "none",
-            scrollTrigger: {
-              trigger: section,
-              start: "top top",
-              end: () => `+=${scrollDistance}`,
-              scrub: 1,
-              pin: true,
-              invalidateOnRefresh: true,
-            },
-          });
-        }
+        gsap.to(track, {
+          x: -scrollDistance,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: () => `+=${scrollDistance}`,
+            scrub: 1,
+            pin: true,
+            invalidateOnRefresh: true,
+          },
+        });
 
         ScrollTrigger.refresh();
       });

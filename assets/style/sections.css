@@ -725,6 +725,7 @@
                 line-height: 110%;
                 font-size: inherit;
                 font-weight: inherit;
+                font-family: "Roca One bold";
 
                 @media (max-width:1000px) {
                     font-size: 32px;

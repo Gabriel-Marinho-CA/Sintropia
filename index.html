@@ -2392,6 +2392,8 @@
 
         let scrollDistance = track.scrollWidth - window.innerWidth;
 
+        ScrollTrigger.normalizeScroll(true);
+
         gsap.to(track, {
           x: -scrollDistance,
           ease: "none",
